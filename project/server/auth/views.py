@@ -74,7 +74,7 @@ class UserAPI(MethodView):
         post_data = request.get_json()
         print(request)
         # check if user already exists
-        myUsers = db.session.query(User).all
+        myUsers = db.session.query(User).all()
         myReturnedUsers = {}
         for user in myUsers:
             myReturnedUsers[user.id] = user.email
